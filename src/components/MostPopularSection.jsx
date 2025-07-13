@@ -76,7 +76,7 @@ const MostPopularSection = () => {
             Most Popular
           </h2>
           <div className="h-0.5 w-[220px] bg-[#002060] dark:bg-orange-400 mx-auto rounded mb-8"></div>
-          <p className="text-gray-200 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base md:text-[15px] font-bold text-gray-200 dark:text-gray-300 max-w-2xl mx-auto">
             Discover IndianOil's commitment to sustainability, safety, and innovation in the energy sector
           </p>
         </div>

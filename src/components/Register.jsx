@@ -11,6 +11,7 @@ function Register() {
   const [ripple, setRipple] = useState({ x: 0, y: 0, active: false });
   const navigate = useNavigate();
 
+  // Handle registration form submission - creates new user account
   const handleRegister = async () => {
     try {
       await axios.post('http://localhost:5174/api/users/register', { name, email, password });
@@ -21,6 +22,7 @@ function Register() {
     }
   };
 
+  // Mouse tracking for the interactive ripple effect
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setRipple({
@@ -109,7 +111,7 @@ function Register() {
                     value={password} 
                     onChange={e => setPassword(e.target.value)}
                     className="transition-all w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:shadow-lg bg-white text-[#002060]"
-                    placeholder="••••••••"
+                    placeholder="Enter your password"
                   />
                 </div>
                 <div>
@@ -119,7 +121,7 @@ function Register() {
                     value={password} 
                     onChange={e => setPassword(e.target.value)}
                     className="transition-all w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:shadow-lg bg-white text-[#002060]"
-                    placeholder="••••••••"
+                    placeholder="Re-Enter your password"
                   />
                 </div>
                 <button
@@ -140,14 +142,6 @@ function Register() {
           </div>
         </main>
       </div>
-      {/* <div className="p-4 max-w-md mx-auto">
-        <h1 className="text-xl mb-4">Register</h1>
-        <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} className="border p-2 w-full mb-2" />
-        <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="border p-2 w-full mb-2" />
-        <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="border p-2 w-full mb-2" />
-        <button onClick={handleRegister} className="bg-green-500 text-white px-4 py-2 mb-2">Register</button>
-        <p className="text-sm">Already have an account? <Link to="/" className="text-blue-600">Login</Link></p>
-      </div> */}
     </>
   );
 }

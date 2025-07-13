@@ -6,14 +6,14 @@ const news = [
     date: "2025-06-10", 
     desc: "XP100, India's premium petrol, now available in more cities for enhanced engine performance and better fuel efficiency.", 
     link: "#",
-    image: "https://scontent.fpat2-1.fna.fbcdn.net/v/t39.30808-6/484591274_1064142415757902_4497930747853624369_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TfWxBx3KSxUQ7kNvwGrpXgv&_nc_oc=Adnu0elgbH32vc7oDsjjHLZKB3WJWvYMAt5ANHDw7rVn7ZbFNNOFAoKX9CeunFTBuX1xddjI3j4Al1NvJ2_LytXm&_nc_zt=23&_nc_ht=scontent.fpat2-1.fna&_nc_gid=i5o7UcNeTnF5I-vMknYcSw&oh=00_AfQ3eSu-ehD1mroOtfGWhy6Ef6Ou4zhK0lXOd6lX1wuXBQ&oe=68701040"
+    image: "https://i.ytimg.com/vi/ll_fJ5W35HY/maxresdefault.jpg"
   },
   { 
     title: "IndianOil signs MoU for green hydrogen collaboration", 
     date: "2025-06-08", 
     desc: "IndianOil partners with global leaders to advance green hydrogen initiatives in India, marking a significant step towards sustainable energy.", 
     link: "#",
-    image: "https://scontent.fpat2-1.fna.fbcdn.net/v/t39.30808-6/482011110_1055946033244207_4029005632587704182_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=VFjYMjaK0toQ7kNvwF404o7&_nc_oc=AdlGXuDsyfaeNljAUOZ2hfpAWeMEAb5qlRltZ1ZNPOW8c-1VhCr3nvyH2GotiRtUWqk4s5EyQrUleqI-3JVrSVMG&_nc_zt=23&_nc_ht=scontent.fpat2-1.fna&_nc_gid=JxZgweakIwNSe5SxZRN2gg&oh=00_AfRgX_d8o1IHLrFVzj8N7kuLtOXz_NbdC2POumamNrI3Rg&oe=68703338"
+    image: "https://affairscloud.com/assets/uploads/2020/11/IISc-IOCL-sign-MoU-for-hydrogen-generation-technology.jpg.webp"
   },
   { 
     title: "IndianOil inaugurates new LPG bottling plant", 
@@ -56,7 +56,7 @@ const NewsCard = ({ title, date, desc, link, image }) => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Blue background in light mode, dark background in dark mode */}
+      {/* Card Blue background in light mode, dark background in dark mode */}
       <div className="absolute inset-0 bg-[#002060]/80 dark:bg-black/80 transition-all duration-300 group-hover:bg-black/20"></div>
       
       {/* Content */}
@@ -116,14 +116,14 @@ const NewsSection = () => {
   };
 
   return (
-    <section id="news" className="relative w-full pt-12 pb-16 bg-orange-500 dark:bg-[#18181b] text-[#002060] dark:text-white z-40 overflow-hidden">
+    <section id="news" className="relative w-full pt-12 pb-16 bg-orange-500 dark:bg-[#18181b] text-[#002060] dark:text-white z-40 overflow-hidden scroll-mt-20">
       <div className="w-full px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#002060] dark:text-orange-400 mb-0">
             News & Media
           </h2>
           <div className="h-0.5 w-[240px] bg-[#002060] dark:bg-orange-400 mx-auto rounded mb-8"></div>
-          <p className="text-gray-200 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-[15px] font-bold text-gray-200 dark:text-gray-300 max-w-2xl mx-auto">
             Stay updated with the latest news, innovations, and developments from IndianOil
           </p>
         </div>

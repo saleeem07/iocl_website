@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import refineriesImg from "../assets/Our Business/refineries.png";
-import pipelinesImg from "../assets/Our Business/pipelines.png";
-import rndImg from "../assets/Our Business/R&D.png";
-import marketingImg from "../assets/Our Business/Marketing.png";
-import petrochemicalsImg from "../assets/Our Business/PC.png";
-import naturalGasImg from "../assets/Our Business/Naturalgas.png";
-import epImg from "../assets/Our Business/E&P.png";
-import explosivesImg from "../assets/Our Business/Explosives.png";
-import cryogenicImg from "../assets/Our Business/Cryogenics.png";
-import businessDefaultImg from "../assets/Our Business/business-default.png";
+import refineriesImg from "../assets/OurBusiness/refineries.png";
+import pipelinesImg from "../assets/OurBusiness/pipelines.png";
+import rndImg from "../assets/OurBusiness/R&D.png";
+import marketingImg from "../assets/OurBusiness/Marketing.png";
+import petrochemicalsImg from "../assets/OurBusiness/PC.png";
+import naturalGasImg from "../assets/OurBusiness/Naturalgas.png";
+import epImg from "../assets/OurBusiness/E&P.png";
+import explosivesImg from "../assets/OurBusiness/Explosives.png";
+import cryogenicImg from "../assets/OurBusiness/Cryogenics.png";
+import businessDefaultImg from "../assets/OurBusiness/business-default.png";
 
 const businesses = [
   { title: "Refineries", desc: "Operating India's largest network of refineries, producing fuels and petrochemicals for the nation.", img: refineriesImg },
@@ -65,7 +65,7 @@ const BusinessesSection = () => {
   };
 
   return (
-    <section id="businesses" className="relative w-full pt-16 pb-20 bg-[#002060] dark:bg-[#18181b] text-white z-30 overflow-hidden">
+    <section id="businesses" className="relative w-full pt-16 pb-20 bg-[#002060] dark:bg-[#18181b] text-white z-30 overflow-hidden scroll-mt-20">
       <h2 className="text-3xl md:text-4xl font-bold mb-0 text-center w-full inline-block">
         <span className="text-[#f97316]">Our</span> <span className="text-[#f97316]">Business</span>
       </h2>

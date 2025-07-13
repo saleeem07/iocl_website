@@ -16,3 +16,8 @@ export default {
   plugins: [],
 }
 
+// Enable smooth scrolling globally
+if (typeof document !== 'undefined') {
+  document.documentElement.style.scrollBehavior = 'smooth';
+}
+

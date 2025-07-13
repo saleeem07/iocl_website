@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+// Footer component with copyright info, navigation links, and social media icons
 const Footer = () => (
   <footer className="relative w-full bg-[#002060] dark:bg-[#18181b] text-white pt-12 pb-6 z-60 overflow-hidden">
     <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
@@ -7,7 +9,7 @@ const Footer = () => (
         © {new Date().getFullYear()} Indian Oil Corporation Ltd. All rights reserved.
       </div>
       <nav className="flex gap-4 flex-wrap justify-center">
-        <a href="#about" className="hover:text-orange-400 transition">About</a>
+        <Link to="/about-iocl" className="hover:text-orange-400 transition">About</Link>
         <a href="#businesses" className="hover:text-orange-400 transition">Businesses</a>
         <a href="#news" className="hover:text-orange-400 transition">News</a>
         <a href="#contact" className="hover:text-orange-400 transition">Contact</a>

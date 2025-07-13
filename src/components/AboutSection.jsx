@@ -8,7 +8,7 @@ const features = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="relative w-full py-16 bg-white dark:bg-[#23272f] text-[#002060] dark:text-white z-20 overflow-hidden">
+  <section id="about" className="relative w-full py-16 bg-white dark:bg-[#23272f] text-[#002060] dark:text-white z-20 overflow-hidden scroll-mt-20">
     <div className="container mx-auto px-4 flex flex-col items-center gap-8 relative z-10">
       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">About IndianOil</h2>
       <p className="mb-8 text-lg md:text-xl text-center max-w-2xl">

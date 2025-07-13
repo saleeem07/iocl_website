@@ -20,100 +20,270 @@ const stats = [
   { label: "Net-Zero Target", value: "2046", icon: netZeroImg, alt: "Net Zero Target" },
 ];
 
-const AboutIOCL = () => (
-  <section className="min-h-screen w-full bg-gradient-to-br from-[#002060]/80 via-[#003366]/60 to-[#ff6f3c]/30 dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] flex flex-col items-center pt-24 pb-12 px-4">
-    <div className="max-w-3xl w-full flex flex-col items-center mx-auto">
-      <div className="w-full flex justify-center mb-6">
+const AboutIOCL = () => {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 to-white dark:from-[#18181b] dark:to-[#23272f]">
+      {/* Section 1: Header */}
+      <section className="pt-24 pb-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#002060] dark:text-orange-400 mb-6">
+              About IOCL
+            </h1>
+            <div className="h-1 w-32 bg-orange-400 mx-auto rounded mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Indian Oil Corporation Limited (IOCL) is India's largest commercial enterprise and the country's flagship national oil company, playing a pivotal role in meeting India's energy needs. As of 2024, IOCL ranks #94 on the Fortune Global 500, with revenue of ₹8.66 lakh crore ($106.9 billion) and net profit of ₹39,619 crore in FY24. IOCL operates 11 refineries with a combined refining capacity of 80.8 million metric tonnes per annum (MMTPA), and manages a pipeline network of approximately 19,700 km, the largest in India. With around 37,472 retail outlets and 30,321 employees, IOCL is committed to energy access, innovation, and sustainability, targeting net-zero emissions by 2046.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Image */}
+      <section className="px-4 pb-12">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative">
         <img
           src={AboutImg}
           alt="About Indian Oil"
-          className="w-full rounded-2xl shadow-xl object-cover border-4 border-orange-100"
-          style={{ aspectRatio: '16/7', background: '#f5f7fa', maxWidth: '100%' }}
+              className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl border-4 border-orange-400/20 hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]"
         />
       </div>
-      <div className="bg-white/90 dark:bg-[#23272f]/90 rounded-2xl shadow-2xl p-8 border-2 border-orange-400 w-full">
-        <h1 className="text-2xl md:text-3xl font-extrabold text-[#002060] dark:text-orange-400 mb-2 text-center tracking-tight drop-shadow">About Indian Oil Corporation Limited (IOCL)</h1>
-        {/* Stat cards: merged grid, same size, lower overlay opacity */}
-        <div className="grid grid-cols-4 grid-rows-2 w-fit mx-auto my-6 border border-white border-opacity-60 overflow-hidden">
-          {stats.map((stat, idx) => (
+        </div>
+      </section>
+
+      {/* Section 3: Key Statistics */}
+      <section className="px-4 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#002060] dark:text-orange-400 mb-4">
+              Key Statistics
+            </h2>
+            <div className="h-1 w-48 bg-orange-400 mx-auto rounded"></div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="relative flex flex-col items-center justify-center min-w-[140px] min-h-[120px] w-[160px] h-[140px] overflow-hidden"
+                className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200 dark:border-orange-400/30 hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer group"
               style={{
                 backgroundImage: `url(${stat.icon})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                borderRight: (idx % 4 !== 3) ? '1px solid #fff' : 'none',
-                borderBottom: (idx < 4) ? '1px solid #fff' : 'none',
-                borderRadius: 0,
-                boxShadow: 'none',
-              }}
-            >
-              {/* Overlay for readability, lower opacity */}
-              <div className="absolute inset-0" style={{background: 'rgba(0,32,96,0.65)'}} />
-              <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                <span className="font-bold text-white text-base md:text-lg drop-shadow-lg text-center">{stat.value}</span>
-                <span className="text-xs text-orange-100 text-center mt-1 drop-shadow">{stat.label}</span>
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {/* Blue background overlay */}
+                <div className="absolute inset-0 bg-[#002060]/80 dark:bg-black/80 transition-all duration-300 group-hover:bg-black/20"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 flex flex-col items-center justify-center p-6 h-32 transition-all duration-300 group-hover:opacity-0">
+                  <span className="font-bold text-white text-lg md:text-xl drop-shadow-lg text-center mb-2">
+                    {stat.value}
+                  </span>
+                  <span className="text-sm text-orange-100 text-center drop-shadow">
+                    {stat.label}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <hr className="my-6 border-orange-200 dark:border-orange-900" />
-        <p className="text-[#002060] dark:text-white/90 mb-4 text-base leading-relaxed">
-          Indian Oil Corporation Limited (IOCL) is India's largest commercial enterprise and the country's flagship national oil company, playing a pivotal role in meeting India's energy needs. As of 2024, IOCL ranks #94 on the Fortune Global 500, with revenue of ₹8.66 lakh crore ($106.9 billion) and net profit of ₹39,619 crore in FY24. IOCL operates 11 refineries with a combined refining capacity of 80.8 million metric tonnes per annum (MMTPA), and manages a pipeline network of approximately 19,700 km, the largest in India. With around 37,472 retail outlets and 30,321 employees, IOCL is committed to energy access, innovation, and sustainability, targeting net-zero emissions by 2046.
-        </p>
-        <h2 className="text-lg font-bold text-orange-400 mb-2 mt-8">Key Highlights</h2>
-        <ul className="list-disc pl-6 text-[#002060] dark:text-white/80 mb-4 space-y-2 text-sm">
-          <li>Ranked #94 in the Fortune Global 500 (2024).</li>
-          <li>Revenue of ₹8.66 lakh crore ($106.9 billion) and net profit of ₹39,619 crore in FY24.</li>
-          <li>Refining capacity of 80.8 MMTPA across 11 refineries.</li>
-          <li>Pipeline network of approximately 19,700 km, the largest in India.</li>
-          <li>About 37,472 retail outlets and 30,321 employees (2024).</li>
-          <li>Net-zero emissions target by 2046.</li>
-        </ul>
-        <hr className="my-6 border-orange-200 dark:border-orange-900" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-base font-bold text-orange-400 mb-2 mt-4">Vision & Mission</h2>
-            <p className="mb-2 text-[#002060] dark:text-white/80 text-sm">
-              <span className="font-semibold">Vision:</span> To be the Energy of India and a globally admired company.
-            </p>
-            <p className="mb-2 text-[#002060] dark:text-white/80 text-sm">
-              <span className="font-semibold">Mission:</span> To provide reliable energy solutions, foster sustainable development, and create value for stakeholders through operational excellence and innovation.
-            </p>
+            ))}
           </div>
-          <div>
-            <h2 className="text-base font-bold text-orange-400 mb-2 mt-4">Core Values</h2>
-            <ul className="list-disc pl-6 text-[#002060] dark:text-white/80 mb-2 space-y-1 text-sm">
-              <li>Care</li>
-              <li>Innovation</li>
-              <li>Passion</li>
-              <li>Trust</li>
-              <li>Nation-First</li>
+        </div>
+      </section>
+
+      {/* Section 4: Key Highlights */}
+      <section className="px-4 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl border border-gray-200 dark:border-orange-400/30 p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#002060] dark:text-orange-400 mb-4">
+                Key Highlights
+              </h2>
+              <div className="h-1 w-32 bg-orange-400 mx-auto rounded"></div>
+            </div>
+            
+            <ul className="space-y-3 text-lg text-gray-700 dark:text-gray-300">
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>Ranked <strong>#94</strong> in the Fortune Global 500 (2024).</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>Revenue of <strong>₹8.66 lakh crore</strong> ($106.9 billion) and net profit of <strong>₹39,619 crore</strong> in FY24.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>Refining capacity of <strong>80.8 MMTPA</strong> across 11 refineries.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>Pipeline network of approximately <strong>19,700 km</strong>, the largest in India.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>About <strong>37,472 retail outlets</strong> and <strong>30,321 employees</strong> (2024).</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                <span>Net-zero emissions target by <strong>2046</strong>.</span>
+              </li>
             </ul>
           </div>
         </div>
-        <h2 className="text-base font-bold text-orange-400 mb-2 mt-8">Sustainability & Innovation</h2>
-        <p className="mb-4 text-[#002060] dark:text-white/80 text-sm">
+      </section>
+
+      {/* Section 5: Company Overview */}
+      <section className="px-4 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white dark:bg-[#18181b] rounded-2xl shadow-xl border border-gray-200 dark:border-orange-400/30 p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#002060] dark:text-orange-400 mb-4">
+                Company Overview
+              </h2>
+              <div className="h-1 w-32 bg-orange-400 mx-auto rounded"></div>
+            </div>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              IOCL operates 11 refineries with a combined refining capacity of 80.8 million metric tonnes per annum (MMTPA), and manages a pipeline network of approximately 19,700 km, the largest in India. With around 37,472 retail outlets and 30,321 employees, IOCL is committed to energy access, innovation, and sustainability, targeting net-zero emissions by 2046.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+              <div>
+                <h3 className="text-xl font-bold text-[#002060] dark:text-orange-400 mb-4">Vision & Mission</h3>
+                <div className="space-y-3">
+                  <div>
+                    <span className="font-semibold text-orange-600 dark:text-orange-400">Vision:</span>
+                    <p className="text-gray-700 dark:text-gray-300 mt-1">To be the Energy of India and a globally admired company.</p>
+          </div>
+          <div>
+                    <span className="font-semibold text-orange-600 dark:text-orange-400">Mission:</span>
+                    <p className="text-gray-700 dark:text-gray-300 mt-1">To provide reliable energy solutions, foster sustainable development, and create value for stakeholders through operational excellence and innovation.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold text-[#002060] dark:text-orange-400 mb-4">Core Values</h3>
+                <ul className="space-y-2">
+                  {['Care', 'Innovation', 'Passion', 'Trust', 'Nation-First'].map((value, index) => (
+                    <li key={index} className="flex items-center text-gray-700 dark:text-gray-300">
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                      {value}
+                    </li>
+                  ))}
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Sustainability & Innovation */}
+      <section className="px-4 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-orange-50 to-blue-50 dark:from-orange-400/10 dark:to-blue-400/10 rounded-2xl p-8 border border-orange-200 dark:border-orange-400/30 shadow-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#002060] dark:text-orange-400 mb-6">
+                Sustainability & Innovation
+              </h3>
+              <div className="h-1 w-48 bg-orange-400 mx-auto rounded mb-6"></div>
+            </div>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
           IOCL is committed to sustainability, investing in renewable energy, green hydrogen, and advanced biofuels. The company aims for net-zero emissions by 2046 and is a leader in environmental stewardship and social responsibility.
         </p>
-        <h2 className="text-base font-bold text-orange-400 mb-2 mt-6">Global Presence</h2>
-        <p className="mb-4 text-[#002060] dark:text-white/80 text-sm">
-          IOCL has a growing international footprint, with subsidiaries and joint ventures in countries such as Sri Lanka, Mauritius, the UAE, and the USA.
-        </p>
-        <div className="mt-8">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white dark:bg-[#18181b] rounded-xl p-6 shadow-md">
+                <h4 className="text-lg font-bold text-[#002060] dark:text-orange-400 mb-3">Environmental Initiatives</h4>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Renewable energy investments
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Green hydrogen development
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Advanced biofuels research
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Carbon footprint reduction
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white dark:bg-[#18181b] rounded-xl p-6 shadow-md">
+                <h4 className="text-lg font-bold text-[#002060] dark:text-orange-400 mb-3">Innovation Focus</h4>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Digital transformation
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Smart technologies
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    R&D investments
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                    Operational excellence
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Global Presence */}
+      <section className="px-4 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-400/10 dark:to-orange-400/10 rounded-2xl p-8 border border-blue-200 dark:border-blue-400/30 shadow-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#002060] dark:text-orange-400 mb-6">
+                Global Presence
+              </h3>
+              <div className="h-1 w-48 bg-orange-400 mx-auto rounded mb-6"></div>
+            </div>
+            
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              IOCL has a growing international footprint, with subsidiaries and joint ventures in countries such as Sri Lanka, Mauritius, the UAE, and the USA. The company continues to expand its global presence through strategic partnerships and investments.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {['Sri Lanka', 'Mauritius', 'UAE', 'USA'].map((country, index) => (
+                <div key={index} className="bg-white dark:bg-[#18181b] rounded-xl p-4 text-center shadow-md">
+                  <h4 className="font-bold text-[#002060] dark:text-orange-400">{country}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Operations</p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center">
           <a
             href="https://iocl.com/about-indianoil"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-5 py-2 rounded-md bg-orange-500 text-white font-semibold text-sm shadow hover:bg-white hover:text-orange-500 border-2 border-orange-400 transition"
+                className="inline-flex items-center px-2 py-1 rounded-lg bg-orange-400 text-white font-semibold text-base shadow-lg hover:bg-white hover:text-orange-400 border-2 border-orange-400 transition-all duration-300 hover:scale-105"
           >
             Learn More at iocl.com
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
           </a>
         </div>
       </div>
     </div>
   </section>
+    </main>
 );
+};
 
 export default AboutIOCL; 

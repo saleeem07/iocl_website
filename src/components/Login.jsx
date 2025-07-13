@@ -10,6 +10,7 @@ function Login() {
   const [ripple, setRipple] = useState({ x: 0, y: 0, active: false });
   const navigate = useNavigate();
 
+  // Handle login form submission - calls the API and stores token
   const handleLogin = async () => {
     try {
       const res = await axios.post('http://localhost:8080/api/users/login', { email, password });
@@ -20,6 +21,7 @@ function Login() {
     }
   };
 
+  // Mouse tracking for the interactive ripple effect
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setRipple({
@@ -97,7 +99,7 @@ function Login() {
                   value={password} 
                   onChange={e => setPassword(e.target.value)}
                   className="transition-all w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:shadow-lg bg-white text-[#002060]"
-                  placeholder="••••••••"
+                  placeholder="Enter your password"
                 />
               </div>
               <button
@@ -115,11 +117,6 @@ function Login() {
           </div>
         </div>
       </main>
-      {/* <h1 className="text-xl mb-4">Login</h1> */}
-      {/* <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="border p-2 w-full mb-2" /> */}
-      {/* <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="border p-2 w-full mb-2" /> */}
-      {/* <button onClick={handleLogin} className="bg-blue-500 text-white px-4 py-2 mb-2">Login</button> */}
-      {/* <p className="text-sm">Don't have an account? <Link to="/register" className="text-blue-600">Register</Link></p> */}
     </div>
   );
 }

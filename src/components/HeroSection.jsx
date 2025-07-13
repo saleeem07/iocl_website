@@ -3,6 +3,7 @@ import Logo from "../assets/iocl-logo.png";
 import bgVideo from "../assets/lp-video.mp4";
 
 const HeroSection = () => {
+  // Scroll to businesses section when CTA button is clicked
   const scrollToBusinesses = () => {
     const businessesSection = document.getElementById('businesses');
     if (businessesSection) {
@@ -50,11 +51,11 @@ const HeroSection = () => {
             >
               Explore Our Services
             </button>
-            <a href="#find-station" className="px-8 py-3 rounded-full bg-white text-orange-500 font-bold text-lg shadow-md hover:bg-orange-500 hover:text-white transition">
+            <a href="#find-station" className="px-8 py-3 rounded-full bg-white text-orange-500 font-bold text-lg shadow-md hover:bg-[#002060] hover:text-white transition">
               Find Nearest Fuel Station
             </a>
           </div>
-          {/* Quick Stats */}
+          {/* Quick Stats - showing key company achievements */}
           <div className="flex flex-wrap gap-6 mt-2 justify-center animate-fade-in-up animation-delay-800">
             <div className="text-white/90 text-sm">
               <span className="font-bold text-orange-400 text-lg">1B+</span> Customers Served

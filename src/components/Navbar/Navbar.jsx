@@ -2,54 +2,33 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../../assets/iocl-logo.png"
 
-const GOOGLE_MAPS_API_KEY = 'AIza...'; // your real key
-
 const Navbar = ({ darkMode, toggleDarkMode }) => { 
+  // Scroll functions for homepage sections - these handle smooth scrolling when navbar links are clicked
   const scrollToBusinesses = () => {
     const businessesSection = document.getElementById('businesses');
     if (businessesSection) {
-      const navbarHeight = 120; // Increased navbar height offset
-      const elementPosition = businessesSection.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      businessesSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      const navbarHeight = 120; // Increased navbar height offset
-      const elementPosition = contactSection.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToNews = () => {
     const newsSection = document.getElementById('news');
     if (newsSection) {
-      const navbarHeight = 120; // Increased navbar height offset
-      const elementPosition = newsSection.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      newsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
-      const navbarHeight = 120; // Increased navbar height offset
-      const elementPosition = aboutSection.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -70,38 +49,38 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           {/* Nav Links */}
           <nav className="w-full md:w-auto flex justify-center md:justify-end mt-2 md:mt-0">
             <ul className="flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-4 lg:gap-6 text-sm md:text-base font-semibold">
-                <li>
-                <Link to="/about-iocl" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm">About IOCL</Link>
+                <li className="flex items-center">
+                <Link to="/about-iocl" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm align-middle">About IOCL</Link>
                 </li>
-                 <li>
+                 <li className="flex items-center">
                 <button 
                   onClick={scrollToBusinesses}
-                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer"
+                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer align-middle"
                 >
                   Our Businesses
                 </button>
                 </li>
-                 <li>
-                <a href="#" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm">Refineries</a>
+                 <li className="flex items-center">
+                <Link to="/refineries" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm align-middle">Refineries</Link>
                 </li>
-                 <li>
-                <a href="#" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm">Indane Gas</a>
+                 <li className="flex items-center">
+                <Link to="/indane" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm align-middle">Indane Gas</Link>
                 </li>
-                 <li>
+                 <li className="flex items-center">
                 <button 
                   onClick={scrollToNews}
-                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer"
+                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer align-middle"
                 >
                   News & Media
                 </button>
                 </li>
-                 <li>
-                <a href="#" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm">Careers</a>
+                 <li className="flex items-center">
+                <Link to="/careers" className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm align-middle">Careers</Link>
                 </li>
-                 <li>
+                 <li className="flex items-center">
                 <button 
                   onClick={scrollToContact}
-                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 pb-1 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer"
+                  className="text-white hover:text-orange-400 transition-colors duration-200 border-b-2 border-transparent hover:border-orange-400 dark:text-white text-xs md:text-sm bg-transparent cursor-pointer align-middle"
                 >
                   Contact
                 </button>
@@ -128,7 +107,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-3 h-3 text-yellow-400">
                     <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.414-1.414M6.343 6.343L4.929 4.929m12.02 0l-1.414 1.414M6.343 17.657l-1.414 1.414" />
-                  </svg>
+                </svg>
                 )}
               </span>
               <span className="sr-only">Toggle dark mode</span>
