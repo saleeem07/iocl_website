@@ -2,7 +2,17 @@
 
 ![IOCL Homepage](./src/assets/iocl_homepage.png)
 
-(iocl-website.vercel.app)
+---
+
+## Frontend Designed and Developed by
+
+**Fahadullah Salim**
+- [LinkedIn](https://www.linkedin.com/in/salim07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) (Fahadullah Salim)
+- [Instagram](https://www.instagram.com/salim_07fz?igsh=MWNiZXJwM3hoYWliNQ==) (Salim_07fz)
+- **Email:** fahad.salim810@gmail.com
+- **Phone:** +91 9102514209
+
+---
 
 ## About
 

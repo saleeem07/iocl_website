@@ -6,3 +6,18 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Marquee right-to-left animation */
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left 23s linear infinite;
+}

@@ -49,6 +49,12 @@ const Home = () => {
   return (
     <main className="flex flex-col relative">
       <HeroSection />
+      {/* Marquee demo notice */}
+      <div className="overflow-x-hidden w-full bg-orange-500 py-1">
+        <div className="marquee-left whitespace-nowrap text-xs italic text-white font-medium select-none pointer-events-none" style={{ willChange: 'transform' }}>
+          A demo version of the IOCL website Frontend — Designed and Developed by Fahadullah Salim.
+        </div>
+      </div>
       <div className="relative z-15">
         <MostPopularSection />
       </div>
